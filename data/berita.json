@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "judul": "Kebakaran di Enrekang",
+    "tanggal": "20 Februari 2026",
+    "gambar": "images/kebakaran.png",
+    "ringkasan": "Kebakaran hutan terjadi di Enrekang, Sulawesi Selatan.",
+    "isi": "Kebakaran hutan terjadi di Enrekang, Sulawesi Selatan, menyebabkan kerusakan lingkungan dan memengaruhi masyarakat sekitar."
+  },
+  {
+    "id": 2,
+    "judul": "Pertumbuhan Ekonomi di Enrekang Meningkat",
+    "tanggal": "19 Februari 2026",
+    "gambar": "images/berita2.jpg",
+    "ringkasan": "Pertumbuhan ekonomi Enrekang menunjukkan tren positif.",
+    "isi": "Ekonomi Enrekang mengalami pertumbuhan yang stabil didukung oleh sektor digital dan UMKM."
+  }
+]
