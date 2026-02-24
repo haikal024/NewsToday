@@ -50,16 +50,17 @@ function renderHero(data){
   const hero = document.getElementById("heroSlider");
   if(!hero || !data.length) return;
 
-  hero.innerHTML = data.slice(0,3).map((b,i)=>`
-    <div class="hero-item ${i===0 ? 'active' : ''}">
-      <img src="${b.gambar}" alt="${b.judul}">
-      <div class="hero-overlay">
-        <h2>${b.judul}</h2>
-        <p>${b.ringkasan}</p>
-        <a class="btn" href="berita.html?id=${b.id}">Baca</a>
-      </div>
+hero.innerHTML = data.slice(0,3).map((b,i)=>`
+  <div class="hero-item ${i===0 ? 'active' : ''}">
+    <img loading="lazy" src="${b.gambar}" alt="${b.judul}">
+    <div class="hero-overlay">
+      <span class="hero-badge">🔥 BERITA UTAMA</span>
+      <h2>${b.judul}</h2>
+      <p>${b.ringkasan}</p>
+      <a class="btn" href="berita.html?id=${b.id}">Baca</a>
     </div>
-  `).join("");
+  </div>
+`).join("");
 }
 
 /* ================= SLIDER ================= */
@@ -88,7 +89,7 @@ function renderList(data){
 
   list.innerHTML = data.map(b=>`
     <div class="card">
-      <img src="${b.gambar}" alt="${b.judul}">
+      <img loading="lazy" src="${b.gambar}" alt="${b.judul}">
       <div class="card-body">
         <h3>${b.judul}</h3>
         <p>${b.tanggal}</p>
