@@ -2,6 +2,13 @@ let semuaBerita = [];
 let slideIndex = 0;
 let sliderInterval = null;
 
+/* ================= SORT TERBARU ================= */
+function sortBeritaTerbaru(data){
+  return [...data].sort((a, b) => {
+    return new Date(b.tanggal) - new Date(a.tanggal);
+  });
+}
+
 /* ================= MENU ================= */
 function toggleMenu(){
   const menu = document.querySelector(".nav-menu");
@@ -26,7 +33,9 @@ fetch("data/berita.json")
     return r.json();
   })
   .then(data => {
-    semuaBerita = data || [];
+    // 🔥 OTOMATIS URUT TERBARU
+    semuaBerita = sortBeritaTerbaru(data || []);
+
     renderHero(semuaBerita);
     renderList(semuaBerita);
     renderDetail(semuaBerita);
@@ -119,9 +128,9 @@ function renderDetail(data){
   /* ===== FORMAT ARTIKEL ===== */
   let isiHTML = (b.isi || "")
     .replace(/\r\n/g, "\n")
-    .replace(/\n\n+/g, "</p><p>")                 // paragraf
-    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // bold
-    .replace(/\*(.*?)\*/g, "<em>$1</em>");            // italic
+    .replace(/\n\n+/g, "</p><p>")
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.*?)\*/g, "<em>$1</em>");
 
   isiHTML = `<p>${isiHTML}</p>`;
 

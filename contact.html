@@ -1,101 +1,94 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5DMB17R3GP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5DMB17R3GP');
+  </script>
 </head>
+
 <body>
 
-<header class="navbar">
-  <h1 class="logo">NewsToday</h1>
+  <header class="navbar">
+    <h1 class="logo">NewsToday</h1>
 
-  <nav class="nav-menu">
-    <a href="index.html">Home</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-</header>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </header>
 
-<main class="main-content">
+  <main class="main-content">
 
-<section class="contact-wrapper">
-  <div class="contact-card">
-    <h2>Contact via WhatsApp</h2>
-    <p class="contact-sub">
-      Isi form lalu kirim ke WhatsApp kami.
-    </p>
+    <section class="contact-wrapper">
+      <div class="contact-card">
+        <h2>Contact via WhatsApp</h2>
+        <p class="contact-sub">
+          Isi form lalu kirim ke WhatsApp kami.
+        </p>
 
-    <form class="contact-form" onsubmit="kirimWA(event)">
-      
-      <!-- NAMA -->
-      <div class="form-group">
-        <label for="nama">Nama</label>
-        <input
-          id="nama"
-          name="nama"
-          type="text"
-          placeholder="Masukkan nama..."
-          required>
+        <form class="contact-form" onsubmit="kirimWA(event)">
+
+          <!-- NAMA -->
+          <div class="form-group">
+            <label for="nama">Nama</label>
+            <input id="nama" name="nama" type="text" placeholder="Masukkan nama..." required>
+          </div>
+
+          <!-- EMAIL -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="Masukkan email..." required>
+          </div>
+
+          <!-- PESAN -->
+          <div class="form-group">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Kirim ke WhatsApp
+          </button>
+
+        </form>
       </div>
+    </section>
 
-      <!-- EMAIL -->
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Masukkan email..."
-          required>
-      </div>
+  </main>
 
-      <!-- PESAN -->
-      <div class="form-group">
-        <label for="pesan">Pesan</label>
-        <textarea
-          id="pesan"
-          name="pesan"
-          rows="5"
-          placeholder="Tulis pesan..."
-          required></textarea>
-      </div>
+  <footer class="footer">
+    <p>©hpmm.kom.uinam</p>
+  </footer>
 
-      <button type="submit" class="btn-submit">
-        Kirim ke WhatsApp
-      </button>
+  <!-- FLOATING WA (AMAN) -->
+  <a href="https://wa.me/6282155217480" class="wa-float" target="_blank" rel="noopener">💬</a>
 
-    </form>
-  </div>
-</section>
+  <script src="js/script.js"></script>
 
-</main>
+  <script>
+    function kirimWA(e) {
+      e.preventDefault();
 
-<footer class="footer">
-  <p>©hpmm.kom.uinam</p>
-</footer>
+      const nama = document.getElementById("nama").value;
+      const email = document.getElementById("email").value;
+      const pesan = document.getElementById("pesan").value;
 
-<!-- FLOATING WA (AMAN) -->
-<a href="https://wa.me/6282155217480"
-   class="wa-float"
-   target="_blank"
-   rel="noopener">💬</a>
+      const nomorWA = "6282155217480";
 
-<script src="js/script.js"></script>
-
-<script>
-function kirimWA(e){
-  e.preventDefault();
-
-  const nama = document.getElementById("nama").value;
-  const email = document.getElementById("email").value;
-  const pesan = document.getElementById("pesan").value;
-
-  const nomorWA = "6282155217480";
-
-  const text = `Halo Admin NewsToday 👋
+      const text = `Halo Admin NewsToday 👋
 
 Nama: ${nama}
 Email: ${email}
@@ -103,10 +96,11 @@ Email: ${email}
 Pesan:
 ${pesan}`;
 
-  const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(text)}`;
-  window.open(url, "_blank", "noopener");
-}
-</script>
+      const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank", "noopener");
+    }
+  </script>
 
 </body>
+
 </html>
