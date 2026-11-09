@@ -1,0 +1,18 @@
+HPMMINEWS - PANDUAN PEMBARUAN
+
+1. Ekstrak ZIP ini.
+2. Buka folder hpmm di VS Code.
+3. Jalankan melalui Live Server atau hosting statis (jangan membuka index.html dengan file:// karena data berita diambil menggunakan fetch JSON).
+4. Untuk menambah berita, edit data/berita.json. Ikuti format objek berita yang sudah ada: id, judul, tanggal, gambar, ringkasan, isi. Simpan gambar/video di folder images/ dan gunakan path relatif, misalnya images/foto-berita.jpg.
+5. Tanggal berita sebaiknya ditulis dengan format: 19 Februari 2026.
+6. Nomor WhatsApp dapat diubah di index.html, berita.html, contact.html, dan js/script.js (fungsi kirimWA).
+
+PERUBAHAN UTAMA
+- Tampilan editorial baru dengan layout responsif desktop, tablet, dan ponsel.
+- Navigasi mobile dengan tombol menu yang dapat diakses.
+- Kartu berita lebih informatif, pencarian dengan pesan hasil kosong, dan slider berita pilihan.
+- Halaman artikel lebih nyaman dibaca, dilengkapi estimasi waktu baca, sumber, artikel lain, dan tombol berbagi.
+- Footer tidak lagi fixed sehingga tidak menutupi konten.
+- Memperbaiki pemanggilan detail artikel di halaman beranda.
+- Menambahkan penanganan error pemuatan JSON dan escaping konten untuk mengurangi risiko injeksi HTML.
+- Memperbaiki pengurutan tanggal berbahasa Indonesia.
